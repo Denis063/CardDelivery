@@ -115,4 +115,10 @@ public class CardDeliveryTest {
         $("[data-test-id='agreement'].input_invalid .checkbox__text")
                 .shouldHave(exactText("Я соглашаюсь с условиями обработки и использования моих персональных данных"));
     }
+    @Test
+    void shouldSendAllFieldsEmpty() {
+        open("http://localhost:9999");
+        $(".button").click();
+        $("[data-test-id=city]").shouldHave(exactText("Поле обязательно для заполнения"));
+    }
 }
