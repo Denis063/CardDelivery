@@ -117,7 +117,6 @@ public class CardDeliveryTest {
     }
     @Test
     void shouldSendAllFieldsEmpty() {
-        open("http://localhost:9999");
         $(".button").click();
         $("[data-test-id=city]").shouldHave(exactText("Поле обязательно для заполнения"));
     }
